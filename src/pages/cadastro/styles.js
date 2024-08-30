@@ -23,7 +23,7 @@ export const Column = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     margin-top: 20px;
 `
@@ -61,7 +61,7 @@ export const SubtitleLogin = styled.p`
 `
 
 
-export const EsqueciText  = styled.p`
+export const NolinkText  = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -71,12 +71,23 @@ export const EsqueciText  = styled.p`
     color: #E5E044;
 ` 
 
-export const CriarText =  styled.p`
+export const LinkText =  styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
+    margin-left: 10px;
 
     color: #23DD7A;
+`
+
+export const ReminderText = styled.p`
+    margin-top: 25px;
+
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.51px;
+    text-align: left;
 `

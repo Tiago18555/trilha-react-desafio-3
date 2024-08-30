@@ -19,6 +19,10 @@ const Login = () => {
         mode: 'onChange',
     });
 
+    const handleClickCreateAccount = () => {
+        navigate('/cadastro')
+    }
+
     const onSubmit = async (formData) => {
         try{
             const {data} = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
@@ -45,19 +49,19 @@ const Login = () => {
             </Column>
             <Column>
                 <Wrapper>
-                <TitleLogin>Faça seu cadastro</TitleLogin>
-                <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <Input placeholder="E-mail" leftIcon={<MdEmail />} name="email"  control={control} />
-                    {errors.email && <span>E-mail é obrigatório</span>}
-                    <Input type="password" placeholder="Senha" leftIcon={<MdLock />}  name="senha" control={control} />
-                    {errors.senha && <span>Senha é obrigatório</span>}
-                    <Button title="Entrar" variant="secondary" type="submit"/>
-                </form>
-                <Row>
-                    <EsqueciText>Esqueci minha senha</EsqueciText>
-                    <CriarText>Criar Conta</CriarText>
-                </Row>
+                    <TitleLogin>Faça seu cadastro</TitleLogin>
+                    <SubtitleLogin>Faça seu login e make the change.</SubtitleLogin>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <Input placeholder="E-mail" leftIcon={<MdEmail />} name="email"  control={control} />
+                        {errors.email && <span>E-mail é obrigatório</span>}
+                        <Input type="password" placeholder="Senha" leftIcon={<MdLock />}  name="senha" control={control} />
+                        {errors.senha && <span>Senha é obrigatório</span>}
+                        <Button title="Entrar" variant="secondary" type="submit"/>
+                    </form>
+                    <Row>
+                        <EsqueciText>Esqueci minha senha</EsqueciText>
+                        <CriarText onClick={handleClickCreateAccount}>Criar Conta</CriarText>
+                    </Row>
                 </Wrapper>
             </Column>
         </Container>
